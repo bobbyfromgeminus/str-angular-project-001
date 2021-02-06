@@ -1,10 +1,17 @@
-<div class="card w-100 h-100">
-    <div class="card-image" [ngStyle]="{ 'background-image': 'url(' + product.image + ')'}" title="Card image cap"></div>
+<div class="card w-100 h-100" [ngClass]="{'is-inactive': !product.active, 'is-featured': product.featured }">
+
+    <div class="info-table">Ez a termék jelenleg nem elérhető.</div>
+    
+    <div class="card-image" [ngStyle]="{ 'background-image': 'url(' + product.image + ')'}" title="Product Image"></div>
     
     <div class="card-body p-3 d-flex flex-column">
         <h5 class="card-title p-0">{{ product.name }}</h5>
-        <p class="card-text card-desc">{{ product.description }}</p>
-        <p class="card-text card-stock">stock: <b>{{ product.stock }}</b> pcs</p>
+        <p class="card-text card-desc my-0 py-0 pb-2">{{ product.description }}</p>
+        <p class="card-text card-stock my-0 py-0">stock: <b>{{ product.stock }}</b> pcs</p>
+        <p class="card-text card-stock my-0 py-0">active: <b>{{ product.active }}</b></p>
+        <p class="card-text card-stock my-0 py-0">featured: <b>{{ product.featured }}</b></p>
+        <p class="card-text card-stock my-0 py-0 pb-2">catId: <b>{{ product.catId }}</b></p>
         <p class="card-text card-price bottom-align-text mt-auto">price: <b>{{ product.price }}</b>-</p>
     </div>
+
 </div>

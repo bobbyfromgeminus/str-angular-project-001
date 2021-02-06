@@ -1,3 +1,24 @@
 .container {
     width: 100%;
+    transform: translateX(2%);
+
+    // Tablet
+    @media (min-width: 768px) {
+        transform: translateX(2%);
+    }
+
+    // Desktop
+    @media (min-width: 992px) {
+        transform: translateX(7%);
+    }
+}
+
+.bg-purple {
+    background-color: rgba(175, 1, 131, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.bg-purple-30 {
+    background-color: rgba(175, 1, 131, 3);
+    color: rgba(255, 255, 255, 1);
 }

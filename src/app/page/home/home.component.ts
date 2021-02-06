@@ -9,7 +9,19 @@ import { ProductService } from '../../service/product.service';
 })
 export class HomeComponent implements OnInit {
 
-  productList: Product[] = this.productService.list;
+  // 5 db kiemelt termék (random)
+  featuredProducts: Product[]  = this.productService.getFeaturedItems(
+    this.productService.randomize(
+      this.productService.getActiveItems(this.productService.list)
+    )
+  ).slice(0, 5);
+
+  // 5 db bármilyen termék (random)
+  randomizedProducts: Product[]  = this.productService.randomize(
+    this.productService.getActiveItems(
+      this.productService.list
+    )
+  ).slice(0, 5);
 
   constructor(
     private productService: ProductService,

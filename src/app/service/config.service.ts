@@ -11,7 +11,7 @@ export interface IMenuItem {
 })
 export class ConfigService {
 
-  appName: string = 'Fourkoló Élelmiszer Webáruház';
+  appName: string = 'FOURkoló Élelmiszer Webáruház';
 
   menuItems: IMenuItem[] = [
     {text: 'Főoldal', link: '/', icon: 'home'},

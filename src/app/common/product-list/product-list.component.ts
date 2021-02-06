@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../model/product';
+import { ProductService } from '../../service/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,10 +9,38 @@ import { Product } from '../../model/product';
 })
 export class ProductListComponent implements OnInit {
 
-  @Input() products: Product[] = [];
-  constructor() { }
+  // Egy keresőszóra vár
+  @Input() phraseString: string = '';
 
-  ngOnInit(): void {
+  // Termékekre vár
+  @Input() products: Product[] = [];
+
+  key: string = '';
+
+  constructor( private productService: ProductService ) {}
+
+  ngOnInit(): void {}
+
+  // Átadja a phraseString változónak az HTML input mező tartalát
+  onChangePhrase(event: Event, key: string): void {
+    this.key = key;
+    this.phraseString = (event.target as HTMLInputElement).value;
+  }
+
+  showActive(): void {
+    this.products = this.productService.getActiveItems(this.products);
+  }
+
+  showInactive(): void {
+    this.products = this.productService.getInactiveItems(this.products);
+  }
+
+  showAll(): void {
+    this.products = this.productService.getAllItems(this.products);
+  }
+
+  sortBy(property: string): void {
+    this.products = this.productService.sortBy(this.products, property);
   }
 
 }

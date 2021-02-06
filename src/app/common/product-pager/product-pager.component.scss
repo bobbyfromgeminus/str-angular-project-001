@@ -1,0 +1,15 @@
+.pager {
+    transform: translateX(2%);
+    border: none;
+    background-color: rgba(0, 0, 0, .1);
+
+            // Tablet
+            @media (min-width: 768px) {
+                transform: translateX(-3%);
+            }
+    
+            // Desktop
+            @media (min-width: 992px) {
+                transform: translateX(6%);
+            }
+}

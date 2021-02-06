@@ -8,11 +8,11 @@ import { Product } from '../../model/product';
 })
 export class ProductCardComponent implements OnInit {
 
+  // Egy darab termékre vár.
   @Input() product = new Product();
+  
   constructor() {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
 }

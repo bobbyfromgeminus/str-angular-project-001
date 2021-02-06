@@ -1,5 +1,14 @@
 .card {
 
+    position: relative;
+
+    .info-table {
+        display: none;
+        position: absolute;
+        top: 0px;
+        filter: grayscale(100%) blur(.5rem);
+    }
+
     transition: all .2s ease-in-out;
     cursor: pointer;
 
@@ -56,4 +65,42 @@
         }
     }
 
+}
+
+.is-inactive {
+    opacity: .7;
+    filter: grayscale(100%) blur(0);
+
+    .info-table {
+        display: none;
+        top: 0%;
+    }
+
+    &:hover {
+        transform: scale(.97);
+        box-shadow: none;
+
+        .card-image, .card-body {
+            opacity: .4;
+            filter: grayscale(100%) blur(.3rem);
+        }
+
+        .info-table {
+            filter: blur(0);
+            display: block;
+            top: 50%;
+            margin: -2rem 1rem 1rem 1rem;
+            background-color:rgba(0, 0, 0 , 1);
+            color:rgba(255, 255, 255 , 1);
+            padding: 1rem 1rem;
+            text-align: center;
+        }
+    }
+}
+
+
+.is-featured {
+    .card-price {
+        background-color: rgba(175, 1, 131, 1);
+    }
 }

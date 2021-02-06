@@ -1,5 +1,16 @@
-<div class="row d-flex w-100" style="justify-content: space-between;">
-    <div class="col-sm-12 col-md-6 col-lg-2 px-2 mx-sm-0 mx-md-0 mx-lg-1 my-2" *ngFor="let product of products">
+<form class="form-inline my-2 my-lg-0 py-3">
+    <div class="filter-header">Rendezés: </div>
+    <div class="filter-button" (click)="sortBy('price')">Ár</div>
+    <div class="filter-button" (click)="sortBy('stock')">Készlet</div>
+    <div class="filter-button" (click)="sortBy('featured')">Kiemelt</div>
+    <div class="filter-button" (click)="sortBy('active')">Aktív</div>
+    <div class="filter-header ml-5">Keresés: </div>
+    <input id="name-search" class="form-control mr-sm-2" type="text" placeholder="Terméknévben" (keyup)="onChangePhrase($event, 'name')">
+    <input id="desc-search" class="form-control mr-sm-2" type="text" placeholder="Leírásban" (keyup)="onChangePhrase($event, 'description')">
+</form>
+
+<div class="row d-flex w-100">
+    <div class="col-sm-12 col-md-6 col-lg-2 px-2 mx-sm-0 mx-md-0 mx-lg-1 my-2" *ngFor="let product of products | filter: phraseString: key">
         <app-product-card [product]="product"></app-product-card>
     </div>
 </div>

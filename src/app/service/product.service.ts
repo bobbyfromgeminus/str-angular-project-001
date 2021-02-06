@@ -60,9 +60,56 @@ export class ProductService {
 
   constructor() { }
 
-  // metódus, ha kell
-  //removeUser(user: User): void {
-    //const index = this.list.findIndex( item => item.id === user.id );
-    //this.list.splice(index, 1);
-  //}
+
+  /*
+    ------------- PRODUCT METÓDUSOK -------------
+
+        Mindegyik egy tömböt vár paraméterként,
+        ezáltal egymásba is ágyazhatók.
+     _____________________________________________
+  */
+
+    // A KIEMELT elemeket adja vissza
+    getFeaturedItems(sourceArray): Product[] {
+      return sourceArray.filter( item => item.featured);
+    }
+
+    // Az AKTÍV elemeket adja vissza
+    getActiveItems(sourceArray): Product[] {
+      return sourceArray.filter( item => item.active);
+    }
+
+    // Az INAKTÍV elemeket adja vissza
+    getInactiveItems(sourceArray): Product[] {
+      return sourceArray.filter( item => !item.active);
+    }
+
+    // Az ÖSSZES elemeket adja vissza
+    getAllItems(sourceArray): Product[] {
+      return sourceArray.filter( item => item);
+    }
+
+    // Egy adott KATEGÓRIA elemeit adja vissza
+    getCategoryItems(sourceArray, category: number): Product[] {
+      return sourceArray.filter( item => item.catId === category);
+    }
+
+    // Összekeveri a tömböt
+    randomize(sourceArray): Product[] {
+      return sourceArray.sort( () => Math.random() - 0.5);
+    }
+
+    // Az átadott tulajdonság szerint növekvő sorrendbe rendezi a tömböt
+    sortBy(sourceArray, property: string): Product[] {
+      return sourceArray.sort( (a, b) => {
+        if ( a[property] < b[property] ){
+          return -1;
+        }
+        if ( a[property] > b[property] ){
+          return 1;
+        }
+        return 0;
+      });
+    }
+
 }
