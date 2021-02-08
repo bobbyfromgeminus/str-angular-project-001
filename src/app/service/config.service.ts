@@ -4,6 +4,7 @@ export interface ITableCol {
   key: string;
   text: string;
   editable?: boolean;
+  datatype: string;
 }
 
 export interface IMenuItem {
@@ -20,15 +21,15 @@ export class ConfigService {
   appName: string = 'FOURkoló Élelmiszer Webáruház';
 
   tableCols: ITableCol[] = [
-    {key: 'id', text: '#', editable: false},
-    {key: 'catId', text: 'kategória', editable: true},
-    {key: 'name', text: 'név', editable: true},
-    {key: 'description', text: 'leírás', editable: true},
-    {key: 'image', text: 'kép', editable: true},
-    {key: 'price', text: 'ár', editable: true},
-    {key: 'stock', text: 'készlet', editable: true},
-    {key: 'featured', text: 'kiemelt', editable: true},
-    {key: 'active', text: 'aktív', editable: true},
+    {key: 'id', text: '#', editable: false, datatype: 'number'},
+    {key: 'catId', text: 'kategória', editable: true, datatype: 'number'},
+    {key: 'name', text: 'név', editable: true, datatype: 'text'},
+    {key: 'description', text: 'leírás', editable: true, datatype: 'longtext'},
+    {key: 'image', text: 'kép', editable: true, datatype: 'image'},
+    {key: 'price', text: 'ár', editable: true, datatype: 'number'},
+    {key: 'stock', text: 'készlet', editable: true, datatype: 'number'},
+    {key: 'featured', text: 'kiemelt', editable: true, datatype: 'bool'},
+    {key: 'active', text: 'aktív', editable: true, datatype: 'bool'},
   ];
 
   menuItems: IMenuItem[] = [

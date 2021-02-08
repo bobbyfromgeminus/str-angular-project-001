@@ -3,18 +3,18 @@
     {
       "id": 4,
       "catId": 1,
-      "name": "Cookie Dough - Chunky",
+      "name": "Kukorica",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
       "image": "/assets/img/products/img04.jpg",
       "price": 23.99,
       "stock": 69,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 5,
       "catId": 1,
-      "name": "Beans - Green",
+      "name": "Cseresznye",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
       "image": "/assets/img/products/img05.jpg",
       "price": 29.99,
@@ -69,7 +69,7 @@
     {
       "id": 10,
       "catId": 1,
-      "name": "Cake Slab",
+      "name": "Fűszerpaprika",
       "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunce.",
       "image": "/assets/img/products/img10.jpg",
       "price": 99.99,
@@ -135,7 +135,7 @@
     {
       "id": 16,
       "catId": 1,
-      "name": "Appetizer - Smoked Salmon / Dill",
+      "name": "Kelkáposzta",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
       "image": "/assets/img/products/img16.jpg",
       "price": 15.99,
@@ -168,7 +168,7 @@
     {
       "id": 19,
       "catId": 1,
-      "name": "Bread - Roll, Soft White Round",
+      "name": "Szamóca",
       "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
       "image": "/assets/img/products/img19.jpg",
       "price": 34.99,
@@ -179,7 +179,7 @@
     {
       "id": 20,
       "catId": 1,
-      "name": "Lettuce - Lolla Rosa",
+      "name": "Paprika",
       "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
       "image": "/assets/img/products/img20.jpg",
       "price": 51.99,
@@ -201,7 +201,7 @@
     {
       "id": 22,
       "catId": 2,
-      "name": "Iced Tea - Lemon, 460 Ml",
+      "name": "Paradicsom",
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
       "image": "/assets/img/products/img22.jpg",
       "price": 91.99,
@@ -212,7 +212,7 @@
     {
       "id": 23,
       "catId": 1,
-      "name": "Squeeze Bottle",
+      "name": "Kivi",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
       "image": "/assets/img/products/img23.jpg",
       "price": 86.99,
@@ -241,17 +241,6 @@
       "stock": 50,
       "featured": false,
       "active": false
-    },
-    {
-      "id": 26,
-      "catId": 1,
-      "name": "Pail - 4l White, With Handle",
-      "description": "In congue. Etiam justo. Etiam pretium iaculis justo.",
-      "image": "/assets/img/products/img26.jpg",
-      "price": 66.99,
-      "stock": 23,
-      "featured": false,
-      "active": true
     },
     {
       "id": 27,
@@ -289,7 +278,7 @@
     {
       "id": 30,
       "catId": 1,
-      "name": "Cake Circle, Paprus",
+      "name": "Répa",
       "description": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
       "image": "/assets/img/products/img30.jpg",
       "price": 56.99,
@@ -333,7 +322,7 @@
     {
       "id": 34,
       "catId": 1,
-      "name": "Wine - Magnotta - Belpaese",
+      "name": "Lime",
       "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
       "image": "/assets/img/products/img34.jpg",
       "price": 77.99,
@@ -388,7 +377,7 @@
     {
       "id": 39,
       "catId": 2,
-      "name": "Wine - Rosso Del Veronese Igt",
+      "name": "Kókusz",
       "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
       "image": "/assets/img/products/img39.jpg",
       "price": 3.99,
@@ -509,7 +498,7 @@
     {
       "id": 50,
       "catId": 2,
-      "name": "Trout Rainbow Whole",
+      "name": "Eper",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
       "image": "/assets/img/products/img50.jpg",
       "price": 11.99,
