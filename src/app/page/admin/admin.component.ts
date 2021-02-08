@@ -12,8 +12,10 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 })
 export class AdminComponent implements OnInit {
   
-  @Input() phraseString: string = '';
-  @Input() key: string = '';
+    @Input() phraseString: string = '';
+    filterKey: string = 'name';
+    filterKeys: string[] = Object.keys(new Product());
+  
 
     productList$: Observable<Product[]> = this.productService.getAll();
     cols: ITableCol[] = this.config.tableCols;
@@ -26,7 +28,7 @@ export class AdminComponent implements OnInit {
     ngOnInit(): void {}
 
     onChangePhrase(event: Event, key: string): void {
-      this.key = key;
+      this.filterKey = key;
       this.phraseString = (event.target as HTMLInputElement).value;
     }
   
@@ -40,6 +42,6 @@ export class AdminComponent implements OnInit {
       this.productService.remove(product).subscribe(
         () => console.log('deleted')
       );
-      //location.reload();
     }
+    
   }

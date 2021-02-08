@@ -1,8 +1,10 @@
-<div class="container">
+<div class="container-fluid">
     <form class="form-inline my-2 my-lg-0 py-3">
-        <div class="filter-header mr-5">Keresés: </div>
-        <input id="name-search" class="form-control mr-sm-2" type="text" placeholder="Terméknévben" (keyup)="onChangePhrase($event, 'name')">
+        <select id="filterKey" name="filterKey" [(ngModel)]="filterKey" class="form-control">
+            <option *ngFor="let fkey of filterKeys" [value]="fkey">{{ fkey }}</option>
+        </select>
+        <input id="name-search" class="form-control mr-sm-2" type="text" placeholder="Keresés" (keyup)="onChangePhrase($event, 'name')">
     </form>
 
-    <app-data-editor [cols]="cols" [products]="productList$ | async | filter: phraseString: key " (updateClick)="onUpdate($event)" (deleteClick)="onDelete($event)"></app-data-editor>
+    <app-data-editor [cols]="cols" [products]="productList$ | async | filter: phraseString: filterKey " (updateClick)="onUpdate($event)" (deleteClick)="onDelete($event)"></app-data-editor>
 </div>

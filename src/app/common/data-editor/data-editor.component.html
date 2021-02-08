@@ -10,12 +10,12 @@
           <tbody>
             <tr *ngFor="let product of products" [id]="'tablerow_' + product['id']">
               <td *ngFor="let col of cols">
-                <input *ngIf="col.editable && col.datatype === 'text'" [(ngModel)]="product[col.key]" type="text" class="form-control">
-                <input *ngIf="col.editable && col.datatype === 'image'" [(ngModel)]="product[col.key]" type="text" class="form-control">
-                <input *ngIf="col.editable && col.datatype === 'number'" [(ngModel)]="product[col.key]" type="text" class="form-control">
-                <input *ngIf="col.editable && col.datatype === 'bool'" [(ngModel)]="product[col.key]" type="checkbox" class="form-control" style="height: 20px;">
+                <input *ngIf="col.editable && col.datatype === 'text'" [(ngModel)]="product[col.key]" type="text" class="form-control-sm">
+                <input *ngIf="col.editable && col.datatype === 'image'" [(ngModel)]="product[col.key]" type="text" class="form-control-sm">
+                <input *ngIf="col.editable && col.datatype === 'number'" [(ngModel)]="product[col.key]" type="text" class="form-control-sm" style="width: 66px;">
+                <input *ngIf="col.editable && col.datatype === 'bool'" [(ngModel)]="product[col.key]" type="checkbox" class="form-control-sm">
                 <span *ngIf="!col.editable">{{ product[col.key] }}</span>
-                <img *ngIf="col.datatype === 'image'" [src]="product[col.key]" style="width: 150px;">
+                <img *ngIf="col.datatype === 'image'" [src]="product[col.key]" class="table__image">
               </td>
               <td>
                 <div class="btn-group">

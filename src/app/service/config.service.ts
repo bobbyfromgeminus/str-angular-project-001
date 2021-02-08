@@ -24,7 +24,7 @@ export class ConfigService {
     {key: 'id', text: '#', editable: false, datatype: 'number'},
     {key: 'catId', text: 'kategória', editable: true, datatype: 'number'},
     {key: 'name', text: 'név', editable: true, datatype: 'text'},
-    {key: 'description', text: 'leírás', editable: true, datatype: 'longtext'},
+    {key: 'description', text: 'leírás', editable: true, datatype: 'text'},
     {key: 'image', text: 'kép', editable: true, datatype: 'image'},
     {key: 'price', text: 'ár', editable: true, datatype: 'number'},
     {key: 'stock', text: 'készlet', editable: true, datatype: 'number'},
