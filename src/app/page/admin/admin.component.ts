@@ -12,13 +12,15 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 })
 export class AdminComponent implements OnInit {
   
-    @Input() phraseString: string = '';
-    filterKey: string = 'name';
-    filterKeys: string[] = Object.keys(new Product());
-  
-
     productList$: Observable<Product[]> = this.productService.getAll();
     cols: ITableCol[] = this.config.tableCols;
+
+    first: number =  0;
+    itemperside:  number =  10;
+
+    filterPhrase: string = '';
+    filterKey: string = 'name';
+    filterKeys: string[] = Object.keys(new Product());
   
     constructor(
       private productService: ProductService,
@@ -26,11 +28,6 @@ export class AdminComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {}
-
-    onChangePhrase(event: Event, key: string): void {
-      this.filterKey = key;
-      this.phraseString = (event.target as HTMLInputElement).value;
-    }
   
     onUpdate(product: Product): void {
       this.productService.update(product).subscribe(

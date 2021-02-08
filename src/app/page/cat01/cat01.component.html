@@ -1,7 +1,7 @@
 <h1 class="header__magenta">Kiemelt {{ categoryList[0].name }}</h1>
 <p>{{ categoryList[0].description }}</p>
 
-<app-product-pager [products]="productList$ | async | randomize | category: 1 | featured: true | active: true | slice: 5"></app-product-pager>
+<app-product-pager [products]="productList$ | async | randomize | category: 1 | featured: true | active: true | slice:0:5"></app-product-pager>
 
 <h1 class="header__green mt-5">{{ categoryList[0].name }}</h1>
 <app-product-list [phraseString]="phrase" [products]="productList$ | async | randomize | category: 1"></app-product-list>

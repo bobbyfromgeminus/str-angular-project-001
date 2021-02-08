@@ -14,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';     // <- második felv
 import { FormsModule } from '@angular/forms';
 import { CategoryPipe } from './pipe/category.pipe';
 import { ActivePipe } from './pipe/active.pipe';
-import { SlicePipe } from './pipe/slice.pipe';
 import { RandomizePipe } from './pipe/randomize.pipe';
 import { FeaturedPipe } from './pipe/featured.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
@@ -34,7 +33,6 @@ import { DataEditorComponent } from './common/data-editor/data-editor.component'
     FilterPipe,
     CategoryPipe,
     ActivePipe,
-    SlicePipe,
     RandomizePipe,
     FeaturedPipe,
     SorterPipe,

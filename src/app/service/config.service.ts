@@ -21,7 +21,7 @@ export class ConfigService {
   appName: string = 'FOURkoló Élelmiszer Webáruház';
 
   tableCols: ITableCol[] = [
-    {key: 'id', text: '#', editable: false, datatype: 'number'},
+    {key: 'id', text: '#id', editable: false, datatype: 'number'},
     {key: 'catId', text: 'kategória', editable: true, datatype: 'number'},
     {key: 'name', text: 'név', editable: true, datatype: 'text'},
     {key: 'description', text: 'leírás', editable: true, datatype: 'text'},
