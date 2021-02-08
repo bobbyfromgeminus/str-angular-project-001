@@ -5,16 +5,16 @@
 .carousel {
     height: 300px;
     position: absolute;
-    transform: translateX(-3%);
+    
  
         // Tablet
         @media (min-width: 768px) {
-            transform: translateX(-3%);
+            
         }
 
         // Desktop
         @media (min-width: 992px) {
-            transform: translateX(-8%);
+            
         }
 }
 
