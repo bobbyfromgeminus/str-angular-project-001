@@ -6,6 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SorterPipe implements PipeTransform {
 
   transform(value: any[], sortby: string): any[] {
+
+    if (!Array.isArray(value) || !sortby) {
+      return value;
+    }
+
     if (sortby==='') return value;
     else {
       return value.sort( (a, b) => {

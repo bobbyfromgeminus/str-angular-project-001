@@ -13,3 +13,18 @@
                 transform: translateX(6%);
             }
 }
+
+.container-fluid {
+    width: 100%;
+    transform: translateX(2%);
+
+    // Tablet
+    @media (min-width: 768px) {
+        transform: translateX(3%);
+    }
+
+    // Desktop
+    @media (min-width: 992px) {
+        transform: translateX(7.5%);
+    }
+}

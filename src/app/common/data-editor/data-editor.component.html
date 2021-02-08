@@ -8,17 +8,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of products">
+            <tr *ngFor="let product of products" [id]="'tablerow_' + product['id']">
               <td *ngFor="let col of cols">
-                <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
-                <span *ngIf="!col.editable">{{ product[col.key] }}</span>
+                <input *ngIf="col.editable && col.datatype === 'text'" [(ngModel)]="product[col.key]" type="text" class="form-control-sm">
+                <input *ngIf="col.editable && col.datatype === 'image'" [(ngModel)]="product[col.key]" type="text" class="form-control-sm">
+                <input *ngIf="col.editable && col.datatype === 'number'" [(ngModel)]="product[col.key]" type="text" class="form-control-sm text-right" style="width: 66px;">
+                <input *ngIf="col.editable && col.datatype === 'bool'" [(ngModel)]="product[col.key]" type="checkbox" class="form-control-sm">
+                <input *ngIf="!col.editable && col.datatype === 'text'" [(ngModel)]="product[col.key]" type="text" class="form-control-sm" disabled>
+                <input *ngIf="!col.editable && col.datatype === 'number'" [(ngModel)]="product[col.key]" type="text" class="form-control-sm text-right" style="width: 66px;" disabled>
+                <img *ngIf="col.datatype === 'image'" [src]="product[col.key]" class="table__image">
               </td>
               <td>
                 <div class="btn-group">
-                  <button (click)="onUpdate(product)" class="btn btn-info">
+                  <button (click)="onUpdate(product, product['id'])" class="btn btn-info">
                     <i class="fa fa-refresh"></i>
                   </button>
-                  <button (click)="onDelete(product)" class="btn btn-danger">
+                  <button (click)="onDelete(product, product['id'])" class="btn btn-danger">
                     <i class="fa fa-trash"></i>
                   </button>
                 </div>

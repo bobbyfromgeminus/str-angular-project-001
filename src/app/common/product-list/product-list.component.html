@@ -1,3 +1,5 @@
+<div class="container-fluid">
+
 <form class="form-inline my-2 my-lg-0 py-3">
     <div class="filter-header">Rendezés: </div>
     <div class="filter-button" (click)="changeOrder('price')">Ár</div>
@@ -13,4 +15,6 @@
     <div class="col-sm-12 col-md-6 col-lg-2 px-2 mx-sm-0 mx-md-0 mx-lg-1 my-2" *ngFor="let product of products | filter: phraseString: key | sorter: sortby">
         <app-product-card [product]="product"></app-product-card>
     </div>
+</div>
+
 </div>
