@@ -1,3 +1,35 @@
+<div class="row">
+  <h5>Új termék létrehozása</h5>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th *ngFor="let col of cols">{{ col.text }}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input value="" id="new_id" type="text" class="form-control-sm text-right" style="width: 66px;"></td>
+          <td><input value="" id="new_catid" type="text" class="form-control-sm text-right" style="width: 66px;"></td>
+          <td><input value="" id="new_name" type="text" class="form-control-sm"></td>
+          <td><input value="" id="new_description" type="text" class="form-control-sm"></td>
+          <td><input value="" id="new_image" type="text" class="form-control-sm"></td>
+          <td><input value="" id="new_price" type="text" class="form-control-sm text-right" style="width: 66px;"></td>
+          <td><input value="" id="new_stock" type="text" class="form-control-sm text-right" style="width: 66px;"></td>
+          <td><input value="" id="new_featured" type="checkbox" class="form-control-sm"></td>
+          <td><input value="" id="new_active" type="checkbox" class="form-control-sm"></td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-info" (click)="onCreate()">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+    
     <div class="row">
       <div class="col-12">
         <table class="table table-striped">

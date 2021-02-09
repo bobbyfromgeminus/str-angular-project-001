@@ -1,11 +1,21 @@
 <div class="container-fluid">
     <div class="border d-flex p-3 mb-3 bg-light">
+        <div class="filter-header">Szűrés: </div>
         <select [(ngModel)]="filterKey" class="form-control mr-3" style="width: 200px;">
             <option *ngFor="let fkey of filterKeys" [value]="fkey">{{ fkey }}</option>
         </select>
         <input [(ngModel)]="filterPhrase" (keyup)="changePageNumber(1)" class="form-control mr-sm-2" type="text" placeholder="Keresés" style="width: 300px;">
     </div>
-    <app-data-editor [cols]="cols" [products]="productList$ | async | filter:filterPhrase:filterKey | slice:firstItem:lastItem" (updateClick)="onUpdate($event)" (deleteClick)="onDelete($event)"></app-data-editor>
+    <div class="border d-flex p-3 mb-3 bg-light">
+        <div class="filter-header">Rendezés: </div>
+        <div *ngFor="let skey of filterKeys" class="filter-button" (click)="changeOrder(skey)">{{ skey }}</div>
+        <select [(ngModel)]="sorterDirection" class="form-control mr-3" style="width: 200px;" (change)="showDirection()">
+            <option value="1">növekvő</option>
+            <option value="2">csökkenő</option>
+        </select>
+    </div>
+
+    <app-data-editor [cols]="cols" [products]="productList$ | async | filter:filterPhrase:filterKey | sorter:sortby:sorterDirection | slice:firstItem:lastItem" (updateClick)="onUpdate($event)" (deleteClick)="onDelete($event)"></app-data-editor>
 
 
     <nav aria-label="Page navigation example">
