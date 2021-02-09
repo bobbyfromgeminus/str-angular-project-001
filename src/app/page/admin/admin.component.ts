@@ -13,7 +13,7 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 })
 export class AdminComponent implements OnInit {
   
-    productNum: number = 0;
+    productProperties: {count: number} = { count: 0};
     firstItem: number = 0;
     lastItem: number = 0;
     pages: number = 0;
@@ -22,10 +22,10 @@ export class AdminComponent implements OnInit {
     
     productList$: Observable<Product[]> = this.productService.getAll().pipe(
       tap( productList => {
-        this.productNum = productList.length;
+        this.productProperties.count = productList.length;
         this.firstItem =  (this.currentPage - 1) * this.itemsPerPage;
         this.lastItem =  this.firstItem + this.itemsPerPage;
-        this.pages = Math.ceil(this.productNum / this.itemsPerPage);
+        this.pages = Math.ceil(this.productProperties.count / this.itemsPerPage);
       }),
     );
 
@@ -34,6 +34,9 @@ export class AdminComponent implements OnInit {
     filterPhrase: string = '';
     filterKey: string = 'name';
     filterKeys: string[] = Object.keys(new Product());
+    sorterDirection: number = 1;
+
+    sortby: string = '';
     
     constructor(
       private productService: ProductService,
@@ -63,6 +66,20 @@ export class AdminComponent implements OnInit {
       this.productService.remove(product).subscribe(
         () => console.log('deleted')
       );
+    }
+
+    onCreate(product: Product): void {
+      this.productService.create(product).subscribe(
+        createdProduct => console.log(createdProduct)
+      );
+    }
+
+    changeOrder(sortby: string): void {
+      this.sortby = sortby;
+    }
+
+    showDirection(): void {
+      console.log(this.sorterDirection);
     }
     
 }
